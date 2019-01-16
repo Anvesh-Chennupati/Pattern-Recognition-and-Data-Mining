@@ -3,6 +3,7 @@
 #include<string>
 #include<sstream>
 #include<iterator>
+#include "isolation_forest.h"
 
 using namespace std;
 
@@ -72,4 +73,38 @@ int main(){
     input = readData();
     // displayData(input);
     validateInput(input);
+    vector<array<double,2> >data(input.size(),{0,0});
+
+    int j=0;
+    for(auto x:input){
+        int i =0;
+        for(auto y:x){
+            data[j][i] = y;
+            i++;  
+        }
+        j++;
+    }
+    iforest::IsolationForest<double, 2> forest;
+
+	if (!forest.Build(50, 12345, data, 100))
+	{
+		std::cerr << "Failed to build Isolation Forest.\n";
+		return 1;
+	}
+
+	std::vector<double> anomaly_scores;
+
+	if (!forest.GetAnomalyScores(data, anomaly_scores))
+	{
+		std::cerr << "Failed to calculate anomaly scores.\n";
+		return 2;
+	}
+
+	for (int i = 0; i < anomaly_scores.size(); i++)
+	{
+		std::cout << "Anomaly_score[" << i << "] " << anomaly_scores[i] << "\n";
+	}
+
+	return 0;
+
 }
