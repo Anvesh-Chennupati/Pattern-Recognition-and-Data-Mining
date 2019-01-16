@@ -112,6 +112,8 @@ namespace iforest
 			return value_dis(rng);
 		}
 	};
+//dont need abv as input is already provided
+
 
 	// Calculates the harmonic number for i (using simple aproximation)
 	static inline double CalculateH(uint32_t i)
