@@ -86,7 +86,7 @@ public class IForest {
             c0 /= cnt0; c1 /= cnt1;
 
             // terminating condition
-            if (c0 - diff0 <= 1e-6 && c1 - diff1 <= 1e-6) {
+            if (c0 - diff0 <= -100000 && c1 - diff1 <= -100000) {
                 break;
             }
         }
@@ -97,7 +97,7 @@ public class IForest {
 
         // max heigt of the tree;
         int limitHeight = (int) Math.ceil(Math.log(subSampleSize) / Math.log(2));
-
+        // creating iTree object
         ITree iTree;
         double[][] subSample;
 
