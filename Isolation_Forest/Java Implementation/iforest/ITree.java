@@ -26,7 +26,9 @@ public class ITree {
         ITree iTree = null;
         if (samples.length == 0) {
             return iTree;
-        } else if (curHeight >= maxHeight || samples.length == 1) {
+        } 
+        
+        else if (curHeight >= maxHeight || samples.length == 1) {
             iTree = new ITree(0, samples[0][0]);
             iTree.leafNodes = 1;
             iTree.curHeight = curHeight;
@@ -52,7 +54,7 @@ public class ITree {
             iTree.curHeight = curHeight;
             return iTree;
         }
-
+        //Generating random
         Random random = new Random(System.currentTimeMillis());
         int attrIndex = random.nextInt(cols);
         double min, max;
@@ -93,12 +95,12 @@ public class ITree {
             }
         }
 
-        ITree parent = new ITree(attrIndex, attrValue);
-        parent.leafNodes = rows;
-        parent.curHeight = curHeight;
-        parent.lTree = createITree(lSamples, curHeight + 1, maxHeight);
-        parent.rTree = createITree(rSamples, curHeight + 1, maxHeight);
+        ITree root = new ITree(attrIndex, attrValue);
+        root.leafNodes = rows;
+        root.curHeight = curHeight;
+        root.lTree = createITree(lSamples, curHeight + 1, maxHeight);
+        root.rTree = createITree(rSamples, curHeight + 1, maxHeight);
 
-        return parent;
+        return root;
     }
 }
