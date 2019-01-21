@@ -102,12 +102,24 @@ public class P1 {
                 }
             });
 
+            //to check if anomalies exist
+            double validate = 0.500000000;
+
             for(int i =0; i< k;i++){
-                for(int j =0; j < samples[(int)anomalyList[i][1]].length;j++){
-                    System.out.print(samples[(int)anomalyList[i][1]][j]);
-                    System.out.print(" ");
+
+                if(validate < anomalyList[i][0]){
+                    for(int j =0; j < samples[(int)anomalyList[i][1]].length;j++){
+                        System.out.print(samples[(int)anomalyList[i][1]][j]);
+                        System.out.print(" ");
+                    }
+                    System.out.println();
                 }
-                System.out.println();
+
+                else{
+                    System.out.println("No Anomalies exists as score is  < than 0.5");
+                    System.exit(-1);
+                }
+                
             }
             
 
