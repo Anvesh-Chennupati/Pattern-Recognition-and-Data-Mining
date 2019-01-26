@@ -1,6 +1,4 @@
 # Pattern-Recognition-and-Data-Mining
-Pattern Recognition and Data Mining 
-
 
 # Isolation Forest for anamoly detection.
 
