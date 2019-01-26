@@ -2,9 +2,9 @@
 Pattern Recognition and Data Mining 
 
 
-#Isolation Forest for anamoly detection.
+# Isolation Forest for anamoly detection.
 
-#Usage
+# Usage
 
 javac P1.java 
 
