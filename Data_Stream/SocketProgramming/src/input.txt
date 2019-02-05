@@ -1,0 +1,6 @@
+25%
+localhost:64277
+What is the sum for last 5 integers?
+What is the sum for last 1000 integers?
+What is the sum for last 4 integers?
+end
