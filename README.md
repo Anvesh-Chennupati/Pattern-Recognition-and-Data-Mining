@@ -2,14 +2,6 @@
 
 # Isolation Forest for anamoly detection.
 
-# Usage
+# Mining datastream 
 
-javac P1.java 
-
-java P1 < input.dat
-
-Input the csv file via command line
-
-Outputs the top K anomalies in the input data 
-
-All exceptions handled.
+# Sentiment Analysis with Emoticons using Ensemble
